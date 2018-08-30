@@ -1,0 +1,129 @@
+body {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  justify-content: center;
+  align-items: center;
+  font-family: 'Special Elite', cursive;
+}
+
+.container {
+  width: 21%;
+  margin: 2%;
+  height: 180px;
+  position: relative;
+  perspective: 800px;
+}
+
+.responsive-border-center {
+  width: 2%;
+  height: 50px;
+  background-color: gray;
+  margin: 0 1%;
+}
+
+.responsive-border-back {
+  width: 5%;
+  height: 50px;
+  background-color: gray;
+  margin: 0 1%;
+  padding-left: 3%;
+}
+
+.score {
+  margin-left: 5%;
+  width: 5%;
+  height: 50px;
+  text-align: center;
+  font-weight: 600;
+  font-size: 38pt;
+}
+
+.table {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  width: 45%;
+  margin: 0 auto;
+}
+
+.card {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  transform-style: preserve-3d;
+  transition: transform 1s;
+}
+
+.card.flipped {
+  transform: rotateY(180deg);
+}
+
+.card div {
+  margin: 0;
+  display: block;
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  backface-visibility: hidden;
+}
+
+.card .front {
+  background: url('../images/back.jpg');
+  background-size: cover;
+  background-position: center;
+}
+
+.card .back {
+  background: url('#');
+  background-size: cover;
+  background-position: center;
+  transform: rotateY(180deg);
+}
+
+.timer {
+  margin-right: 5%;
+  width: 5%;
+  height: 50px;
+  text-align: center;
+  font-weight: 600;
+  font-size: 38pt;
+}
+
+.game-over {
+  display: none;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background: rgba(20, 20, 20, .9);
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  width: 100%;
+  z-index: 1;
+}
+
+button {
+  width: 350px;
+  height: 100px;
+  font-size: 36pt;
+  font-weight: 600;
+  outline: none;
+}
+
+button:hover {
+  background-color: #808080;
+}
+
+h1 {
+  color: white;
+  font-size: 72pt;
+  font-weight: 400;
+}
+
+h2 {
+  color: white;
+  font-size: 48pt;
+  font-weight: 400;
+  margin: 10px;
+}

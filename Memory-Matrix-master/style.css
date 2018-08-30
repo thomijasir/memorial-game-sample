@@ -1,0 +1,182 @@
+*{
+color: white;
+  }
+.subHeader {
+  font-family: 'Sacramento', cursive;
+  margin: 10px;
+  font-size: 63px;
+}
+[data-new-row="true"]{
+  clear:both;
+  /*the element is moved down to clear past both left and right floats.*/
+}
+button {
+    font-family: 'Montserrat', sans-serif;
+    margin-right: 30px;
+    margin-left: 30px;
+    margin-top: 30px;
+    margin-bottom: 30px;
+    background-color: #d3d3d3;
+    -webkit-box-shadow: 10px 10px 46px -5px rgba(0,0,0,0.67);
+    -moz-box-shadow: 10px 10px 46px -5px rgba(0,0,0,0.67);
+    box-shadow: 10px 10px 46px -5px rgba(0,0,0,0.67);
+    border-radius: 10px 10px 10px 10px;
+    -moz-border-radius: 10px 10px 10px 10px;
+    -webkit-border-radius: 10px 10px 10px 10px;
+    border: 0px solid #000000;
+    border: none;
+    color: white;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+  }
+
+.name {
+  margin-top: 20px;
+  margin-left: auto;
+  margin-right: auto;
+  text-align: center;
+  font-size: 130px;
+  color: white;
+  font-family: 'Montserrat', sans-serif;
+}
+figure {
+  line-height: 126px;
+}
+.tile {
+
+  width: 130px;
+  height: 130px;
+  display: inline;
+  float: left;
+  font-size: 48px;
+  /*text-align: center;*/
+  line-height: 200px;
+  outline: solid;
+  outline-color: white;
+}
+.clock{
+  /*position: absolute;*/
+  font-size: 45px;
+  clear: right;
+  height: 10px;
+  width: 10px;
+  float: right;
+  /*padding-top: 5px;*/
+  margin-right: 50px;
+  padding-right: 60px;
+}
+.clock_stop{
+  /*position: absolute;*/
+  font-size: 45px;
+  clear: right;
+  height: 10px;
+  width: 10px;
+  float: right;
+  /*padding-top: 5px;*/
+  margin-right: 50px;
+  padding-right: 60px;
+}
+
+body{
+  margin-top: 0px;
+  margin-bottom: 0px;
+  padding: 0px;
+
+}
+
+}
+.tile {
+
+  width: 130px;
+  height: 130px;
+  display: inline;
+  float: left;
+  font-size: 48px;
+  /*text-align: center;*/
+  line-height: 200px;
+  outline: solid;
+  outline-color: white;
+}
+
+#memoryBoard {
+  margin: 7em 15em 7em 15em;
+   
+}
+
+.container {
+  width: 130px;
+  height: 130px;
+ /* position: relative; */
+  display: inline;
+  float: left;
+  font-size: 48px;
+  /*text-align: center;*/
+  line-height: 200px;
+  outline: solid;
+  outline-color: white;
+  perspective: 1000px;
+}
+
+#cube {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  transform-style: preserve-3d;
+}
+
+#cube figure {
+  margin: 0;
+  width: 126px;
+  height: 126px;
+  display: block;
+  position: absolute;
+  border: 2px solid black;
+}
+
+#cube .front  { transform: rotateY(   0deg ); }
+#cube .back   { transform: rotateX( 180deg ); }
+#cube .right  { transform: rotateY(  90deg ); }
+#cube .left   { transform: rotateY( -90deg ); }
+#cube .top    { transform: rotateX(  90deg ); }
+#cube .bottom { transform: rotateX( -90deg ); }
+
+#cube .front  { transform: rotateY(   0deg ) translateZ( 65px ); }
+#cube .back   { transform: rotateX( 180deg ) translateZ( 65px ); }
+#cube .right  { transform: rotateY(  90deg ) translateZ( 65px ); }
+#cube .left   { transform: rotateY( -90deg ) translateZ( 65px ); }
+#cube .top    { transform: rotateX(  90deg ) translateZ( 65px ); }
+#cube .bottom { transform: rotateX( -90deg ) translateZ( 65px ); }
+
+#cube { transform: translateZ( -65px ); }
+
+#cube.show-front  { transform: translateZ( -65px ) rotateY(    0deg ); }
+#cube.show-back   { transform: translateZ( -65px ) rotateX( -180deg ); }
+#cube.show-right  { transform: translateZ( -65px ) rotateY(  -90deg ); }
+#cube.show-left   { transform: translateZ( -65px ) rotateY(   90deg ); }
+#cube.show-top    { transform: translateZ( -65px ) rotateX(  -90deg ); }
+#cube.show-bottom { transform: translateZ( -65px ) rotateX(   90deg ); }
+
+#cube { transition: transform 1s; }
+
+.front {
+    background-color: red;
+    text-align: center;
+}
+.back {
+    background-color: blue;
+}
+.right {background-color: green;}
+.left {background-color: orange;}
+.top {background-color: green;}
+.bottom {background-color: violet;}
+
+@media only screen and (max-width: 768px) {
+    /* For mobile phones: */
+    #memoryBoard {
+      margin: 0px 0px 0px 0px;
+        width: 100%;
+    }
+}

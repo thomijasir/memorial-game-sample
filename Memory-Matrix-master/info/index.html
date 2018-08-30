@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en-us">
+  <head>
+    <meta charset="UTF-8">
+    <title>Memory-matrix by rmilford</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" href="stylesheets/normalize.css" media="screen">
+    <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,700' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" type="text/css" href="stylesheets/stylesheet.css" media="screen">
+    <link rel="stylesheet" type="text/css" href="stylesheets/github-light.css" media="screen">
+  </head>
+  <body>
+    <section class="page-header">
+      <h1 class="project-name">Memory-matrix</h1>
+      <h2 class="project-tagline">A game of concentration, programmed in jQuery &amp; JavaScript.</h2>
+      <a href="https://github.com/rmilford/Memory-Matrix" class="btn">View on GitHub</a>
+      <a href="https://github.com/rmilford/Memory-Matrix/zipball/master" class="btn">Download .zip</a>
+      <a href="https://github.com/rmilford/Memory-Matrix/tarball/master" class="btn">Download .tar.gz</a>
+    </section>
+
+    <section class="main-content">
+      <h2>
+<a id="synopsis" class="anchor" href="#synopsis" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Synopsis</h2>
+
+<p>The following project is an <strong>exciting</strong> game of memory (aka concentration) where a player must click on two tiles to find match and remember where the matches are before they disappear and clicking on two new tiles can be clicked on. Once the user finds a match, the cards stay face up. And with a new feature, the user can now choose between three exciting board sizes for all experience levels. Additionally, the user can now try to beat their best time with the new 'timer' feature that was recently added as a feature.</p>
+
+<h2>
+<a id="code-example" class="anchor" href="#code-example" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Code Example</h2>
+
+<p>Show what the library does as concisely as possible, developers should be able to figure out <strong>how</strong> your project solves their problem by looking at the code example. Make sure the API you are showing off is obvious, and that your code is short and concise.</p>
+
+<p>This program uses a jQuery library. The following code is a snippet of code that generates the size of the board based on the user's input. The function 'makingTileBoard' says, index which button the user clicks on and save it into a variable called 'difficulty.' Then, if the user clicked on the first button on the page, the variable size is 4, if they click on the second button, size is 5, and if they click on the third button, size is 6. Then, the based on which button they clicked on, the computer generates a row based on the variable size. The output of the for loop is then dynamic based on the users input. The inside of the for loop is a boolean that says, 'newRow' returns true when i is divisible by size and has remainder of zero. When newRow returns true, the program changes the div color of the new row and pops the old color of the div out.</p>
+
+<div class="highlight highlight-source-js"><pre><span class="pl-k">var</span> size <span class="pl-k">=</span> <span class="pl-c1">0</span>;
+<span class="pl-k">function</span> <span class="pl-en">makingTileBoard</span> (){
+  <span class="pl-k">var</span> difficulty <span class="pl-k">=</span> <span class="pl-en">$</span>(<span class="pl-s"><span class="pl-pds">'</span>button<span class="pl-pds">'</span></span>).<span class="pl-c1">index</span>(<span class="pl-en">$</span>(<span class="pl-v">this</span>));
+  <span class="pl-en">$</span>(<span class="pl-s"><span class="pl-pds">"</span>.intro<span class="pl-pds">"</span></span>).<span class="pl-en">remove</span>();
+  <span class="pl-k">if</span>(difficulty <span class="pl-k">===</span> <span class="pl-c1">0</span>){
+    size <span class="pl-k">=</span> <span class="pl-c1">4</span>;
+  }
+  <span class="pl-k">else</span> <span class="pl-k">if</span>(difficulty <span class="pl-k">===</span> <span class="pl-c1">1</span>){
+    size <span class="pl-k">=</span> <span class="pl-c1">5</span>;
+  }
+  <span class="pl-k">else</span>{
+    size <span class="pl-k">=</span> <span class="pl-c1">6</span>;
+  }
+  <span class="pl-k">for</span>(<span class="pl-k">var</span> i <span class="pl-k">=</span> <span class="pl-c1">0</span>; i <span class="pl-k">&lt;</span> size<span class="pl-k">*</span>(size<span class="pl-k">-</span><span class="pl-c1">1</span>); i<span class="pl-k">++</span>){
+    <span class="pl-c">//if i is a multiple of size, this makes a row</span>
+    <span class="pl-k">var</span> newRow <span class="pl-k">=</span> (i <span class="pl-k">%</span> size <span class="pl-k">===</span> <span class="pl-c1">0</span>);
+    <span class="pl-k">if</span> (newRow) {
+      currentColor <span class="pl-k">=</span> <span class="pl-smi">divColors</span>.<span class="pl-c1">pop</span>();
+    }
+      <span class="pl-smi">arrayCards</span>.<span class="pl-c1">push</span>(<span class="pl-c1">Math</span>.<span class="pl-c1">floor</span>((i)<span class="pl-k">/</span><span class="pl-c1">2</span>));
+      <span class="pl-en">$</span>(<span class="pl-s"><span class="pl-pds">"</span>#memoryBoard<span class="pl-pds">"</span></span>).<span class="pl-en">append</span>(<span class="pl-s"><span class="pl-pds">'</span>&lt;div class="tile" data-new-row="<span class="pl-pds">'</span></span><span class="pl-k">+</span>newRow<span class="pl-k">+</span><span class="pl-s"><span class="pl-pds">'</span>"  style="background-color:<span class="pl-pds">'</span></span><span class="pl-k">+</span>currentColor<span class="pl-k">+</span><span class="pl-s"><span class="pl-pds">'</span>;"&gt;&lt;/div&gt;<span class="pl-pds">'</span></span>);
+  }</pre></div>
+
+<h2>
+<a id="motivation" class="anchor" href="#motivation" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Motivation</h2>
+
+<p>The motivation behind this project was learning more about my strengths and weaknesses as a new programmer trying to build a small application for the first time and find out about the struggles I experienced in the process. This was also a chance to practice wireframing, pseudocoding, experimenting with jQuery library, learning more about the capabilities of JavaScript's use in the browser, and even having a little fun with writing my own test specs with Jasmine. </p>
+
+<h2>
+<a id="tests" class="anchor" href="#tests" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Tests</h2>
+
+<p>In this project, there are Jasmine tests used as a framework to test the code that can be tested on a local server using testem, a JSON package. An example of the test suite should look like the following: </p>
+
+<pre><code>describe("createDeck", function() {
+  it("should store the value of a deck of cards in an array", function() {
+    var userPoints;
+    var arrayCards;
+    //store the value in an array
+    expect([]).toEqual([]);
+    arrayCards = [];
+  });
+</code></pre>
+
+<h2>
+<a id="contributors" class="anchor" href="#contributors" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Contributors</h2>
+
+<p>If you want more information on the project, you can reach out to the main developer on Twitter @rebekahmilford</p>
+
+      <footer class="site-footer">
+        <span class="site-footer-owner"><a href="https://github.com/rmilford/Memory-Matrix">Memory-matrix</a> is maintained by <a href="https://github.com/rmilford">rmilford</a>.</span>
+
+        <span class="site-footer-credits">This page was generated by <a href="https://pages.github.com">GitHub Pages</a> using the <a href="https://github.com/jasonlong/cayman-theme">Cayman theme</a> by <a href="https://twitter.com/jasonlong">Jason Long</a>.</span>
+      </footer>
+
+    </section>
+
+  
+  </body>
+</html>

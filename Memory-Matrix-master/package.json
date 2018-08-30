@@ -1,0 +1,17 @@
+{
+  "name": "project1",
+  "version": "1.0.0",
+  "description": "",
+  "main": "memory.js",
+  "dependencies": {
+    "jasmine-expect": "^2.0.2",
+    "jasmine-matchers-loader": "^0.1.0",
+    "moment": "^2.13.0"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC"
+}
